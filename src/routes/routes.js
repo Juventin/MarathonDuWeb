@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from '../components/Homepage';
 import Exemple from '../components/Graph';
-import {Redirect, Route, Switch} from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 
 
 let renderRoutes = () => {

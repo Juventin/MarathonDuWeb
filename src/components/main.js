@@ -91,7 +91,7 @@ export default class Main extends React.Component {
         let links = template.links.map((item, i) => {
             if (item.loc === 'ext') {
                 return (
-                    <a key={i} href={item.url} target="_blank"><item.icon />{item.name}</a>
+                    <a key={i} href={item.url}><item.icon />{item.name}</a>
                 )
             }
             else if (item.type === 'sep') {
