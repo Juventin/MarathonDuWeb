@@ -7,7 +7,7 @@ import {Route, Switch} from "react-router-dom";
 let renderRoutes = () => {
     return (
         <Switch>
-            <Route path="/Exemple" component={Exemple}/>
+            <Route path="/Exemple/graph" component={Exemple}/>
 
             <Route path='*' exact={true} component={Home}/>
         </Switch>

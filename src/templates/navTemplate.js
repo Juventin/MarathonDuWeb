@@ -5,7 +5,7 @@ import {
 export default {
     home: {
         label: 'home',
-        url: '/',
+        url: '/home',
         links: [
             {
                 name: 'Home',
@@ -14,9 +14,9 @@ export default {
             }
         ]
     },
-    graph: {
+    Exemple: {
         label: 'Exemple',
-        url: "/Exemple",
+        url: "/Exemple/graph",
         links: [
             {
                 name: 'Graph',

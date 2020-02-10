@@ -39,7 +39,6 @@ export default class Main extends React.Component {
             selectedTemplate: template,
             selected_module_index: i,
         });
-
     }
 
     onBlur = () => {
@@ -65,8 +64,12 @@ export default class Main extends React.Component {
         let data = [];
         for (let key in navTemplate) {
             if (navTemplate[key].label) {
+                console.log(this.state.selectedTemplate.substring(0, 3))
+                console.log(this.state.selectedTemplate)
+                console.log(navTemplate[key].url.substring(1, 4))
+                console.log(navTemplate[key].url)
                 data.push(
-                    <Link key={key} to={navTemplate[key].url}
+                    <Link key={key} className={navTemplate[key].url.substring(1, 4) === this.state.selectedTemplate.substring(0, 3)? 'selection' : 'non'} to={navTemplate[key].url}
                           onClick={(e) => this.updateTemplate(key)}>{navTemplate[key].label}</Link>
                 );
             }
@@ -198,4 +201,9 @@ const Box = styled.div`
         height: calc(100vh - ${config.navHeight}) !important;
     }
     
+    .selection {
+        color: rgba(255,255,255, 1) !important;
+        font-weight: 600;
+        text-decoration: none;
+    }
 `;
