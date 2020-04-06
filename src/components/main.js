@@ -64,10 +64,6 @@ export default class Main extends React.Component {
         let data = [];
         for (let key in navTemplate) {
             if (navTemplate[key].label) {
-                console.log(this.state.selectedTemplate.substring(0, 3))
-                console.log(this.state.selectedTemplate)
-                console.log(navTemplate[key].url.substring(1, 4))
-                console.log(navTemplate[key].url)
                 data.push(
                     <Link key={key} className={navTemplate[key].url.substring(1, 4) === this.state.selectedTemplate.substring(0, 3)? 'selection' : 'non'} to={navTemplate[key].url}
                           onClick={(e) => this.updateTemplate(key)}>{navTemplate[key].label}</Link>
