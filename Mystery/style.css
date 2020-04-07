@@ -163,16 +163,16 @@ input[type="checkbox"]:checked {
 }
 
 
-#gender .active {
+#gender .active, #age .active {
     border-radius: 50%;
     box-shadow: 0px 0px 10px #308bae;
 }
 
-#gender .hidden * {
+#gender .hidden *, #age .hidden * {
     box-shadow: 0px 0px 0px;
 }
 
-#gender .legende {
+#gender .legende, #age .legende {
     font-weight: normal;
     font-size: 12px;
     line-height: 16px;

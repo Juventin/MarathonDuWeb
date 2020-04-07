@@ -51,26 +51,13 @@
                 <h2>Age range <img src="img/down-arrow.png" class="arrow up" id="arrowage" onclick="toggle('age')"></h2>
                 <div class="boutons" id="buttonsage">
 
-                    <div class="sliderwidget">
-                        <img src="img/age-baby.png" class="imgbutton">
-                        <input type="text" id="sliderage" class="slider">
-                        <img src="img/age-papy.png" class="imgbutton">
+                    <div>
+                        <img src="img/age-baby.png" id="baby" class="imgbutton" onclick="select('baby')">
+                        <img src="img/age-daddy.png" id="daddy" class="imgbutton" onclick="select('daddy')">
+                        <img src="img/age-papy.png" id="papy" class="imgbutton" onclick="select('papy')">
                     </div>
-                    <div class="slidertext">
-                        <input type="text" id="minage" class="slidertextinput" value="2" onKeyUp="sliderAge.setValues(parseInt(document.getElementById('minage').value), parseInt(document.getElementById('maxage').value))">
-                        <input type="text" id="maxage" class="slidertextinput" value="3" onKeyUp="sliderAge.setValues(parseInt(document.getElementById('minage').value), parseInt(document.getElementById('maxage').value))">
-                    </div>
-
-                    <img src="img/more.png" id="addage" class="addinterval" onclick="addcritere('age')">
-
-                    <div class="sliderwidget hidden" id="widgetage2">
-                        <img src="img/age-baby.png" class="imgbutton">
-                        <input type="text" id="sliderage2" class="slider">
-                        <img src="img/age-papy.png" class="imgbutton">
-                    </div>
-                    <div class="slidertext hidden" id="textage2">
-                        <input type="text" id="minage2" class="slidertextinput" value="2" onKeyUp="sliderAge2.setValues(parseInt(document.getElementById('minage2').value), parseInt(document.getElementById('maxage2').value))">
-                        <input type="text" id="maxage2" class="slidertextinput" value="5" onKeyUp="sliderAge2.setValues(parseInt(document.getElementById('minage2').value), parseInt(document.getElementById('maxage2').value))">
+                    <div>
+                        <p class="legende">18-25</p><p class="legende">26-50</p><p class="legende">50+</p>
                     </div>
 
                 </div>
@@ -195,33 +182,6 @@
 
     <script>
         // SLIDERS 
-        var sliderAge = new rSlider({
-            target: '#sliderage',
-            values: [1, 2, 3, 4, 5, 6, 7, 8],
-            range: true,
-            set: [2, 3],
-            tooltip: false,
-            width: "100px",
-            labels: false,
-            onChange: function(values){
-                document.getElementById('minage').value = parseInt(values[0])
-                document.getElementById('maxage').value = parseInt(values[2])
-            }
-        }); 
-
-        var sliderAge2 = new rSlider({
-            target: '#sliderage2',
-            values: [1, 2, 3, 4, 5, 6, 7, 8],
-            range: true,
-            set: [2, 3],
-            tooltip: false,
-            width: "100px",
-            labels: false,
-            onChange: function(values){
-                document.getElementById('minage2').value = parseInt(values[0])
-                document.getElementById('maxage2').value = parseInt(values[2])
-            }
-        });
 
         var sliderSalary = new rSlider({
             target: '#slidersalary',
