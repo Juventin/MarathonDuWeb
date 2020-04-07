@@ -162,9 +162,14 @@ input[type="checkbox"]:checked {
     cursor: pointer;
 }
 
+
 #gender .active {
     border-radius: 50%;
     box-shadow: 0px 0px 10px #3986E2;
+}
+
+#gender .hidden * {
+    box-shadow: 0px 0px 0px;
 }
 
 #gender .legende {
