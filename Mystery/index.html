@@ -337,7 +337,7 @@
         document.addEventListener('DOMContentLoaded', function () {
             var myChart = Highcharts.Map('mapdiv', {
                 chart: {
-                    map: 'countries/fr/fr-all-all',
+                    map: 'countries/fr/fr-all',
                     backgroundColor: 'none'
                 },
                 title: {
@@ -370,8 +370,13 @@
                 },
 
                 colorAxis: {
-                    minColor: '#FFF4BE',
-                    maxColor: '#e84845',
+                    minColor: '#c7d3d8',
+                    maxColor: '#184a5d',
+                    stops: [
+                        [0, '#c7d3d8'],
+                        [0.5, '#308bae'],
+                        [1, '#184a5d']
+                    ]
                 },
 
                 credits: {

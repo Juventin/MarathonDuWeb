@@ -2,7 +2,7 @@
 .rs-container{font-family:Arial,Helvetica,sans-serif;height:30px;position:relative}
 
 .rs-container .rs-bg,.rs-container .rs-selected{background-color:rgba(74, 82, 131, 0.51);height:4px;left:0;position:absolute;top:6px;width:100%;border-radius:3px}
-.rs-container .rs-selected{background-color:rgba(74, 82, 131, 0.93);transition:all .2s linear;width:0}
+.rs-container .rs-selected{background-color: #e40127;transition:all .2s linear;width:0}
 .rs-container.disabled .rs-selected{background-color:#ccc;border-color:#bbb}
 
 .rs-container .rs-pointer{background-color:#F3F3F3;border:1px solid #324A5E;border-radius:50%;cursor:pointer;height:16px;left:-10px;position:absolute;top:0;transition:all .2s linear;width:16px;box-shadow:0px 1px 2px rgba(0, 0, 0, 0.25)}
