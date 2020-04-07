@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Emoteev</title>
+    <link rel="icon" type="image/png" href="img/star-empty.png" />
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="range-slider-master/css/rSlider.min.css">
+    <script src="range-slider-master/js/rSlider.min.js"></script>
+  </head>
+  <body>
+
+    <div id="sidenav">
+
+        <div id="logo">
+            <img src="img/logo-white.png" style="width: 100%">
+        </div>
+        <div id="instructions">
+            <p>Select your criterias</p>
+        </div>
+
+        <div id="criteriacontent">
+
+            <div class="criteria" id="gender">
+                <h2>Gender <img src="img/down-arrow.png" class="arrow up" id="arrowgender" onclick="toggle('gender')"></h2>
+                <div class="boutons" id="buttonsgender">
+                    <div>
+                        <img src="img/gender-female.png" id="female" class="imgbutton" onclick="select('female')">
+                        <img src="img/gender-male.png" id="male" class="imgbutton" onclick="select('male')">
+                    </div>
+                    <div>
+                        <p class="legende">Female</p><p class="legende">Male</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="criteria" id="age">
+                <h2>Age range <img src="img/down-arrow.png" class="arrow up" id="arrowage" onclick="toggle('age')"></h2>
+                <div class="boutons" id="buttonsage">
+
+                    <div class="sliderwidget">
+                        <img src="img/age-baby.png" class="imgbutton">
+                        <input type="text" id="sliderage" class="slider">
+                        <img src="img/age-papy.png" class="imgbutton">
+                    </div>
+                    <div class="slidertext">
+                        <input type="text" id="minage" class="slidertextinput" value="2" onKeyUp="sliderAge.setValues(parseInt(document.getElementById('minage').value), parseInt(document.getElementById('maxage').value))">
+                        <input type="text" id="maxage" class="slidertextinput" value="3" onKeyUp="sliderAge.setValues(parseInt(document.getElementById('minage').value), parseInt(document.getElementById('maxage').value))">
+                    </div>
+
+                    <img src="img/more.png" id="addage" class="addinterval" onclick="addcritere('age')">
+
+                    <div class="sliderwidget hidden" id="widgetage2">
+                        <img src="img/age-baby.png" class="imgbutton">
+                        <input type="text" id="sliderage2" class="slider">
+                        <img src="img/age-papy.png" class="imgbutton">
+                    </div>
+                    <div class="slidertext hidden" id="textage2">
+                        <input type="text" id="minage2" class="slidertextinput" value="2" onKeyUp="sliderAge2.setValues(parseInt(document.getElementById('minage2').value), parseInt(document.getElementById('maxage2').value))">
+                        <input type="text" id="maxage2" class="slidertextinput" value="5" onKeyUp="sliderAge2.setValues(parseInt(document.getElementById('minage2').value), parseInt(document.getElementById('maxage2').value))">
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="criteria" id="salary">
+                <h2>Salary range <img src="img/down-arrow.png" class="arrow up" id="arrowsalary" onclick="toggle('salary')"></h2>
+                <div class="boutons" id="buttonssalary">
+
+                    <div class="sliderwidget">
+                        <img src="img/salary-min.png" class="imgbutton">
+                        <input type="text" id="slidersalary" class="slider">
+                        <img src="img/salary-max.png" class="imgbutton">
+                    </div>
+                    <div class="slidertext">
+                        <input type="text" id="minsalary" class="slidertextinput" value="2" onKeyUp="sliderSalary.setValues(parseInt(document.getElementById('minsalary').value), parseInt(document.getElementById('maxsalary').value))">
+                        <input type="text" id="maxsalary" class="slidertextinput" value="3" onKeyUp="sliderSalary.setValues(parseInt(document.getElementById('minsalary').value), parseInt(document.getElementById('maxsalary').value))">
+                    </div>
+
+                    <img src="img/more.png" id="addsalary" class="addinterval" onclick="addcritere('salary')">
+
+                    <div class="sliderwidget hidden" id="widgetsalary2">
+                        <img src="img/salary-min.png" class="imgbutton">
+                        <input type="text" id="slidersalary2" class="slider">
+                        <img src="img/salary-max.png" class="imgbutton">
+                    </div>
+                    <div class="slidertext hidden" id="textsalary2">
+                        <input type="text" id="minsalary2" class="slidertextinput" value="2" onKeyUp="sliderSalary2.setValues(parseInt(document.getElementById('minsalary2').value), parseInt(document.getElementById('maxsalary2').value))">
+                        <input type="text" id="maxsalary2" class="slidertextinput" value="3" onKeyUp="sliderSalary2.setValues(parseInt(document.getElementById('minsalary2').value), parseInt(document.getElementById('maxsalary2').value))">
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="criteria" id="interests">
+                <h2>Interests <img src="img/down-arrow.png" class="arrow up" id="arrowinterests" onclick="toggle('interests')"></h2>
+                <div class="boutons" id="buttonsinterests">
+                    <input type="text" id="searchinterests" class="interestsinput" placeholder="Search..." onkeyup="search()">
+                    <ul class="formulaire" id="formulaire">
+                        <li>
+                            <input type="checkbox" id="arts" name="arts">
+                            <label for="vehicle1">Arts et divertissements</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="automobile" name="automobile">
+                            <label for="vehicle2">Automobile</label>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="affaires" name="affaires">
+                            <label for="vehicle3">Affaires</label>
+                        </li>
+                        <li>
+                        <input type="checkbox" id="carrieres" name="carrieres">
+                        <label for="vehicle3">Carrières</label></li><li>
+                        <input type="checkbox" id="education" name="education">
+                        <label for="vehicle3">Éducation</label></li><li>
+                        <input type="checkbox" id="famille" name="famille">
+                        <label for="vehicle3">Famille et parentalité</label></li><li>
+                        <input type="checkbox" id="santé" name="santé">
+                        <label for="vehicle3">Santé et mise en forme</label></li><li>
+                        <input type="checkbox" id="alimentation" name="alimentation">
+                        <label for="vehicle3">Alimentation et boissons</label></li><li>
+                        <input type="checkbox" id="loisirs" name="loisirs">
+                        <label for="vehicle3">Loisirs et intérêts</label></li><li>
+                        <input type="checkbox" id="maison" name="maison">
+                        <label for="vehicle3">Maison et jardin</label></li><li>
+                        <input type="checkbox" id="droit" name="droit">
+                        <label for="vehicle3">Droit et politique</label></li><li>
+                        <input type="checkbox" id="actualites" name="actualites">
+                        <label for="vehicle3">Actualités</label></li><li>
+                        <input type="checkbox" id="finances" name="finances">
+                        <label for="vehicle3">Finances personnelles</label></li><li>
+                        <input type="checkbox" id="societe" name="societe">
+                        <label for="vehicle3">Société</label></li><li>
+                        <input type="checkbox" id="sciences" name="sciences">
+                        <label for="vehicle3">Sciences</label></li><li>
+                        <input type="checkbox" id="animaux" name="animaux">
+                        <label for="vehicle3">Science</label></li><li>
+                        <input type="checkbox" id="sports" name="sports">
+                        <label for="vehicle3">Sports</label></li><li>
+                        <input type="checkbox" id="style" name="style">
+                        <label for="vehicle3">Style et mode</label></li><li>
+                        <input type="checkbox" id="technologie" name="technologie">
+                        <label for="vehicle3">Tech et informatique</label></li><li>
+                        <input type="checkbox" id="voyage" name="voyage">
+                        <label for="vehicle3">Voyage</label></li><li>
+                        <input type="checkbox" id="immobilier" name="immobilier">
+                        <label for="vehicle3">Immobilier</label></li><li>
+                        <input type="checkbox" id="shopping" name="shopping">
+                        <label for="vehicle3">Shopping</label></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="mapdiv">
+        <p>testmap</p>
+    </div>
+    <script>
+        var sliderAge = new rSlider({
+            target: '#sliderage',
+            values: [1, 2, 3, 4, 5, 6, 7, 8],
+            range: true,
+            set: [2, 3],
+            tooltip: false,
+            width: "100px",
+            labels: false,
+            onChange: function(values){
+                document.getElementById('minage').value = parseInt(values[0])
+                document.getElementById('maxage').value = parseInt(values[2])
+            }
+        }); 
+
+        var sliderAge2 = new rSlider({
+            target: '#sliderage2',
+            values: [1, 2, 3, 4, 5, 6, 7, 8],
+            range: true,
+            set: [2, 3],
+            tooltip: false,
+            width: "100px",
+            labels: false,
+            onChange: function(values){
+                document.getElementById('minage2').value = parseInt(values[0])
+                document.getElementById('maxage2').value = parseInt(values[2])
+            }
+        });
+
+        var sliderSalary = new rSlider({
+            target: '#slidersalary',
+            values: [1, 2, 3, 4, 5, 6, 7, 8],
+            range: true,
+            set: [2, 3],
+            tooltip: false,
+            width: "100px",
+            labels: false,
+            onChange: function(values){
+                document.getElementById('minsalary').value = parseInt(values[0])
+                document.getElementById('maxsalary').value = parseInt(values[2])
+            }
+        }); 
+
+        var sliderSalary2 = new rSlider({
+            target: '#slidersalary2',
+            values: [1, 2, 3, 4, 5, 6, 7, 8],
+            range: true,
+            set: [2, 3],
+            tooltip: false,
+            width: "100px",
+            labels: false,
+            onChange: function(values){
+                document.getElementById('minsalary2').value = parseInt(values[0])
+                document.getElementById('maxsalary2').value = parseInt(values[2])
+            }
+        });
+
+        // Doc : https://www.cssscript.com/animated-customizable-range-slider-pure-javascript-rslider-js/
+    
+    
+        function select(id) {
+            if(document.getElementById(id).className == "imgbutton active"){
+                document.getElementById(id).className = "imgbutton"
+            }
+            else {
+                document.getElementById(id).className = "imgbutton active"
+            }
+        }
+    
+        function addcritere(id) {
+            add = 'add'+id
+            document.getElementById(add).className += " hidden";
+            widget = 'widget'+id+'2'
+            document.getElementById(widget).className = "sliderwidget";
+            text = 'text'+id+'2'
+            document.getElementById(text).className = "slidertext";
+        }
+
+        function toggle(idshort) {
+            id = 'buttons'+idshort
+            arrow = 'arrow'+idshort
+            if(document.getElementById(id).className == 'boutons hidden'){
+                document.getElementById(id).className = 'boutons'
+                document.getElementById(arrow).className = 'arrow up'
+            }
+            else {
+                document.getElementById(id).className = 'boutons hidden'
+                document.getElementById(arrow).className = 'arrow down'
+            }
+        }
+
+        function search() {
+            // Declare variables
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('searchinterests');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("formulaire");
+            li = ul.getElementsByTagName("li");
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("label")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+                } else {
+                li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+  </body>
+</html>

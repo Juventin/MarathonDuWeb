@@ -1,0 +1,226 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+a, a:hover {
+    text-decoration: none;
+    color: black
+}
+
+.hidden {
+    height: 0;
+    overflow: hidden
+}
+
+ul {
+    list-style-type:none;
+}
+
+/* SCROLLBAR */
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #EAEAEA; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(172, 172, 172); 
+    border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(116, 116, 116); 
+    border-radius: 2px;
+}
+
+
+/* CHECKBOX  */
+
+input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+input[type="checkbox"] {
+    border-radius: 4px;
+    height: 15px;
+    width: 15px;
+    background: #D7D7D7;
+    border: 1px solid #8F8F8F;
+    box-sizing: border-box;
+    border-radius: 2px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    background: rgb(102, 102, 102);
+}
+
+
+/* SIDENAV */
+
+#sidenav {
+    width: 250px;
+    height: 100%;
+    float: left;
+    background: #EAEAEA;
+    box-shadow: 3px 0px 5px rgba(0, 0, 0, 0.25);
+    position: fixed;
+}
+
+#logo {
+    background-color: #212331;
+    background: rgba(33, 35, 49, 0.9);
+    border-radius: 0px 0px 10px 10px;
+    padding: 10px;
+}
+
+#instructions p{
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+    color: #787878;
+    text-align: center;
+    padding: 20px 0 20px 0;
+}
+
+#criteriacontent {
+    overflow: scroll;
+    height: calc(100% - 120px);
+    margin-bottom: 40px;
+}
+
+.criteria {
+    border-top: 2px solid #D1D1D1;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 30px;
+}
+
+.criteria h2 {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    color: #656671;
+    padding: 10px 0px 10px 0px;
+    width: 100%;
+}
+
+.criteria .arrow {
+    float: right;
+    height: 16px;
+    margin-right: 2px;
+    cursor: pointer;
+    transition: transform 0.4s;
+}
+
+.up {
+    transform: rotate(180deg);
+}
+
+.down {
+    transform: rotate(0deg);
+}
+
+.criteria .boutons {
+    padding-top: 15px;
+    text-align: center;
+}
+
+.imgbutton {
+    margin: 0 10px 0 10px;
+    cursor: pointer;
+}
+
+#gender .active {
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px #3986E2;
+}
+
+#gender .legende {
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    color: #494B57;
+    display: inline-block;
+    width: 45px;
+    margin: 0 10px 0 10px;
+}
+
+.sliderwidget *, .slidertext * {
+    display: inline-block;
+    margin: 0;
+}
+
+
+.slidertextinput {
+    width: 30px;
+    margin-top: 3px;
+    background: #F8F8F8;
+    border: 1px solid #797979;
+    border-radius: 2px;
+    text-align: center;
+    color: #494B57;
+}
+
+.slidertextinput:nth-child(1) {
+    float: left;
+    margin-left: 20px;
+}
+
+.slidertextinput:nth-child(2) {
+    float: right;
+    margin-right: 21px;
+}
+
+.addinterval {
+    width: 18px;
+    margin-top: 30px;
+    cursor: pointer;
+}
+
+
+.interestsinput {
+    margin-top: 0;
+    background: #F8F8F8;
+    border: 1px solid #797979;
+    border-radius: 2px;
+    padding: 4px 0px 4px 5px;
+    color: #494B57;
+}
+
+#interests .formulaire {
+    text-align: left;
+    margin: 10px;
+    line-height: 25px;
+    color: #737373;
+}
+
+
+
+/* MAP */
+
+#mapdiv {
+    background-color: white;
+    height: 100%;
+}
