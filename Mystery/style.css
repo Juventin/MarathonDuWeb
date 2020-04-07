@@ -223,4 +223,5 @@ input[type="checkbox"]:checked {
 #mapdiv {
     background-color: white;
     height: 100%;
+    margin-left: 250px;
 }
