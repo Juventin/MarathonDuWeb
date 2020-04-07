@@ -18,8 +18,10 @@
   </head>
   <body>
 
+    <!-- SIDENAV  -->
     <div id="sidenav">
 
+        <!-- HEADER  -->
         <div id="logo">
             <img src="img/logo-white.png" style="width: 100%">
         </div>
@@ -27,8 +29,10 @@
             <p>Select your criterias</p>
         </div>
 
+        <!-- CRITERES  -->
         <div id="criteriacontent">
 
+            <!-- GENRE  -->
             <div class="criteria" id="gender">
                 <h2>Gender <img src="img/down-arrow.png" class="arrow up" id="arrowgender" onclick="toggle('gender')"></h2>
                 <div class="boutons" id="buttonsgender">
@@ -42,7 +46,7 @@
                 </div>
             </div>
 
-
+            <!-- AGE  -->
             <div class="criteria" id="age">
                 <h2>Age range <img src="img/down-arrow.png" class="arrow up" id="arrowage" onclick="toggle('age')"></h2>
                 <div class="boutons" id="buttonsage">
@@ -72,7 +76,7 @@
                 </div>
             </div>
 
-
+            <!-- SALAIRE  -->
             <div class="criteria" id="salary">
                 <h2>Salary range <img src="img/down-arrow.png" class="arrow up" id="arrowsalary" onclick="toggle('salary')"></h2>
                 <div class="boutons" id="buttonssalary">
@@ -102,6 +106,7 @@
                 </div>
             </div>
 
+            <!-- INTERETS  -->
             <div class="criteria" id="interests">
                 <h2>Interests <img src="img/down-arrow.png" class="arrow up" id="arrowinterests" onclick="toggle('interests')"></h2>
                 <div class="boutons" id="buttonsinterests">
@@ -109,65 +114,87 @@
                     <ul class="formulaire" id="formulaire">
                         <li>
                             <input type="checkbox" id="arts" name="arts">
-                            <label for="vehicle1">Arts et divertissements</label>
-                        </li>
-                        <li>
+                            <label for="arts">Arts et divertissements</label>
+                        </li><li>
                             <input type="checkbox" id="automobile" name="automobile">
-                            <label for="vehicle2">Automobile</label>
-                        </li>
-                        <li>
+                            <label for="automobile">Automobile</label>
+                        </li><li>
                             <input type="checkbox" id="affaires" name="affaires">
-                            <label for="vehicle3">Affaires</label>
+                            <label for="affaires">Affaires</label>
+                        </li><li>
+                            <input type="checkbox" id="carrieres" name="carrieres">
+                            <label for="carrieres">Carrières</label>
+                        </li><li>
+                            <input type="checkbox" id="education" name="education">
+                            <label for="education">Éducation</label>
+                        </li><li>
+                            <input type="checkbox" id="famille" name="famille">
+                            <label for="famille">Famille et parentalité</label>
+                        </li><li>
+                            <input type="checkbox" id="santé" name="santé">
+                            <label for="santé">Santé et mise en forme</label>
+                        </li><li>
+                            <input type="checkbox" id="alimentation" name="alimentation">
+                            <label for="alimentation">Alimentation et boissons</label>
+                        </li><li>
+                            <input type="checkbox" id="loisirs" name="loisirs">
+                            <label for="loisirs">Loisirs et intérêts</label>
+                        </li><li>
+                            <input type="checkbox" id="maison" name="maison">
+                            <label for="maison">Maison et jardin</label>
+                        </li><li>
+                            <input type="checkbox" id="droit" name="droit">
+                            <label for="droit">Droit et politique</label>
+                        </li><li>
+                            <input type="checkbox" id="actualites" name="actualites">
+                            <label for="actualites">Actualités</label>
+                        </li><li>
+                            <input type="checkbox" id="finances" name="finances">
+                            <label for="finances">Finances personnelles</label>
+                        </li><li>
+                            <input type="checkbox" id="societe" name="societe">
+                            <label for="societe">Société</label>
+                        </li><li>
+                            <input type="checkbox" id="sciences" name="sciences">
+                            <label for="sciences">Sciences</label>
+                        </li><li>
+                            <input type="checkbox" id="animaux" name="animaux">
+                            <label for="animaux">Animaux</label>
+                        </li><li>
+                            <input type="checkbox" id="sports" name="sports">
+                            <label for="sports">Sports</label>
+                        </li><li>
+                            <input type="checkbox" id="style" name="style">
+                            <label for="style">Style et mode</label>
+                        </li><li>
+                            <input type="checkbox" id="technologie" name="technologie">
+                            <label for="technologie">Tech et informatique</label>
+                        </li><li>
+                            <input type="checkbox" id="voyage" name="voyage">
+                            <label for="voyage">Voyage</label>
+                        </li><li>
+                            <input type="checkbox" id="immobilier" name="immobilier">
+                            <label for="immobilier">Immobilier</label>
+                        </li><li>
+                            <input type="checkbox" id="shopping" name="shopping">
+                            <label for="shopping">Shopping</label>
                         </li>
-                        <li>
-                        <input type="checkbox" id="carrieres" name="carrieres">
-                        <label for="vehicle3">Carrières</label></li><li>
-                        <input type="checkbox" id="education" name="education">
-                        <label for="vehicle3">Éducation</label></li><li>
-                        <input type="checkbox" id="famille" name="famille">
-                        <label for="vehicle3">Famille et parentalité</label></li><li>
-                        <input type="checkbox" id="santé" name="santé">
-                        <label for="vehicle3">Santé et mise en forme</label></li><li>
-                        <input type="checkbox" id="alimentation" name="alimentation">
-                        <label for="vehicle3">Alimentation et boissons</label></li><li>
-                        <input type="checkbox" id="loisirs" name="loisirs">
-                        <label for="vehicle3">Loisirs et intérêts</label></li><li>
-                        <input type="checkbox" id="maison" name="maison">
-                        <label for="vehicle3">Maison et jardin</label></li><li>
-                        <input type="checkbox" id="droit" name="droit">
-                        <label for="vehicle3">Droit et politique</label></li><li>
-                        <input type="checkbox" id="actualites" name="actualites">
-                        <label for="vehicle3">Actualités</label></li><li>
-                        <input type="checkbox" id="finances" name="finances">
-                        <label for="vehicle3">Finances personnelles</label></li><li>
-                        <input type="checkbox" id="societe" name="societe">
-                        <label for="vehicle3">Société</label></li><li>
-                        <input type="checkbox" id="sciences" name="sciences">
-                        <label for="vehicle3">Sciences</label></li><li>
-                        <input type="checkbox" id="animaux" name="animaux">
-                        <label for="vehicle3">Science</label></li><li>
-                        <input type="checkbox" id="sports" name="sports">
-                        <label for="vehicle3">Sports</label></li><li>
-                        <input type="checkbox" id="style" name="style">
-                        <label for="vehicle3">Style et mode</label></li><li>
-                        <input type="checkbox" id="technologie" name="technologie">
-                        <label for="vehicle3">Tech et informatique</label></li><li>
-                        <input type="checkbox" id="voyage" name="voyage">
-                        <label for="vehicle3">Voyage</label></li><li>
-                        <input type="checkbox" id="immobilier" name="immobilier">
-                        <label for="vehicle3">Immobilier</label></li><li>
-                        <input type="checkbox" id="shopping" name="shopping">
-                        <label for="vehicle3">Shopping</label></li>
                     </ul>
                 </div>
             </div>
 
         </div>
     </div>
+
+    <!-- MAP  -->
     <div id="mapdiv">
         <p id="chargement">Loading ...</p>
     </div>
+
+
+
     <script>
+        // SLIDERS 
         var sliderAge = new rSlider({
             target: '#sliderage',
             values: [1, 2, 3, 4, 5, 6, 7, 8],
@@ -227,6 +254,7 @@
         // Doc : https://www.cssscript.com/animated-customizable-range-slider-pure-javascript-rslider-js/
     
     
+        // SELECT GENDER 
         function select(id) {
             if(document.getElementById(id).className == "imgbutton active"){
                 document.getElementById(id).className = "imgbutton"
@@ -236,6 +264,8 @@
             }
         }
     
+
+        // AJOUT CRITERE 
         function addcritere(id) {
             add = 'add'+id
             document.getElementById(add).className += " hidden";
@@ -245,6 +275,8 @@
             document.getElementById(text).className = "slidertext";
         }
 
+
+        // HIDE/SHOW CRITERE 
         function toggle(idshort) {
             id = 'buttons'+idshort
             arrow = 'arrow'+idshort
@@ -258,14 +290,17 @@
             }
         }
 
+
+        // RECHERCHE INTERET 
         function search() {
-            // Declare variables
+            
             var input, filter, ul, li, a, i, txtValue;
+
             input = document.getElementById('searchinterests');
             filter = input.value.toUpperCase();
             ul = document.getElementById("formulaire");
             li = ul.getElementsByTagName("li");
-            // Loop through all list items, and hide those who don't match the search query
+            
             for (i = 0; i < li.length; i++) {
                 a = li[i].getElementsByTagName("label")[0];
                 txtValue = a.textContent || a.innerText;
@@ -277,6 +312,8 @@
             }
         }
 
+
+        // CHART !!
         document.addEventListener('DOMContentLoaded', function () {
             var myChart = Highcharts.Map('mapdiv', {
                 chart: {
