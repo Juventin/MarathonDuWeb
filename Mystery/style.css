@@ -26,6 +26,17 @@ ul {
     list-style-type:none;
 }
 
+
+#chargement {
+    padding: 50px 0;
+    width: 200px;
+    text-align: center;
+    margin: 0 auto 0 auto;
+    color: rgba(33, 35, 49, 0.9);
+    font-weight: bold
+}
+
+
 /* SCROLLBAR */
 
 /* width */
@@ -88,7 +99,6 @@ input[type="checkbox"]:checked {
 }
 
 #logo {
-    background-color: #212331;
     background: rgba(33, 35, 49, 0.9);
     border-radius: 0px 0px 10px 10px;
     padding: 10px;

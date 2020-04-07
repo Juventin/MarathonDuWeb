@@ -2,15 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Emoteev</title>
+    <title>GeoTeev</title>
     <link rel="icon" type="image/png" href="img/star-empty.png" />
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="stylesheet" href="range-slider-master/css/rSlider.min.css">
     <script src="range-slider-master/js/rSlider.min.js"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
 
+    <script src="https://code.highcharts.com/maps/highmaps.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/data.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/maps/modules/offline-exporting.js"></script>
+    <script src="https://code.highcharts.com/mapdata/countries/fr/fr-all-all.js"></script>
   </head>
   <body>
 
@@ -161,7 +165,7 @@
         </div>
     </div>
     <div id="mapdiv">
-        <p>LA MAP IRA ICI</p>
+        <p id="chargement">Loading ...</p>
     </div>
     <script>
         var sliderAge = new rSlider({
@@ -272,6 +276,62 @@
                 }
             }
         }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var myChart = Highcharts.Map('mapdiv', {
+                chart: {
+                    map: 'countries/fr/fr-all-all',
+                    backgroundColor: 'none'
+                },
+                title: {
+                    text: 'Potentiel de targeting'
+                },
+                exporting: {
+                    sourceWidth: 600,
+                    sourceHeight: 500
+                },
+
+                legend: {
+                    layout: 'horizontal',
+                    borderWidth: 0,
+                    backgroundColor: 'rgba(255,255,255,0.85)',
+                    floating: true,
+                    verticalAlign: 'bottom',
+                    y: 25
+                },
+                
+                mapNavigation: {
+                    enabled: true
+                },
+
+                colorAxis: {
+                    minColor: '#FFF4BE',
+                    maxColor: '#e84845',
+                },
+
+                credits: {
+                    enabled: false
+                }
+
+                // series: [{
+                //     animation: {
+                //         duration: 1000
+                //     },
+                //     data: data,
+                //     joinBy: ['postal-code', 'code'],
+                //     dataLabels: {
+                //         enabled: true,
+                //         color: '#FFFFFF',
+                //         format: '{point.code}'
+                //     },
+                //     name: 'Population density',
+                //     tooltip: {
+                //         pointFormat: '{point.code}: {point.value}/km²'
+                //     }
+                // }]
+            });
+        });
+
     </script>
   </body>
 </html>
