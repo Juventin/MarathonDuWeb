@@ -223,7 +223,7 @@
             
             budgetValue = parseInt(document.getElementById("budget").value)
             volumeValue = parseInt(document.getElementById("volume").value)
-            priceValue = parseInt(document.getElementById("price").value)
+            priceValue = parseFloat(document.getElementById("price").value)
 
             if(budgetValue > 0 && volumeValue > 0 && priceValue > 0){
                 document.getElementById('result').innerHTML = load
