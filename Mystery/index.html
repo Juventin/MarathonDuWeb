@@ -12,34 +12,54 @@
         <img src="img/logo-blue.png" id="groslogo">
         <table>
             <tr>
-                <td><a href="map.html">
+                <td onmouseover="descr('map')"><a href="map.html">
                     <img src="imggrandes/logo-map.png">
                 </td></a>
-                <td><a href="twitter.html">
+                <td onmouseover="descr('twitter')"><a href="twitter.html">
                     <img src="imggrandes/logo-twitter.png">
                 </td></a>
-                <td><a href="goal.html">
+                <td onmouseover="descr('goal')"><a href="goal.html">
                     <img src="imggrandes/logo-goal.png">
                 </td></a>
-                <td><a href="trend.html">
+                <td  onmouseover="descr('trend')"><a href="trend.html">
                     <img src="imggrandes/logo-trend.png">
                 </td></a>
             </tr>
             <tr>
-                <td><a href="map.html">
+                <td  onmouseover="descr('map')"><a href="map.html">
                     Map
                 </td></a>
-                <td><a href="twitter.html">
+                <td  onmouseover="descr('twitter')"><a href="twitter.html">
                     Twitter
                 </td></a>
-                <td><a href="classification.html">
+                <td  onmouseover="descr('goal')"><a href="classification.html">
                     Goal
                 </td></a>
-                <td><a href="Trend.html">
+                <td  onmouseover="descr('trend')"><a href="Trend.html">
                     Trend
                 </td></a>
             </tr>
         </table>
+        <div id=description>
+        </div>
     </div>
   </body>
+
+  <script>
+      function descr(page){
+          if(page == 'map'){
+              text = "<p></p>"
+          }
+          if(page == 'twitter'){
+              text = "<p></p>"
+          }
+          if(page == 'goal'){
+              text = "<p></p>"
+          }
+          if(page == 'trend'){
+              text = "<p></p>"
+          }
+          document.getElementById('description').innerHTML = text
+      }
+  </script>
 </html>

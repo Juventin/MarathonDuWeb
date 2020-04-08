@@ -40,3 +40,8 @@ table tr td img:hover {
     margin-bottom: 5px;
     margin-top: 0px;
 }
+
+#description {
+    margin-top: 30px;
+    color: lightblue;
+}
