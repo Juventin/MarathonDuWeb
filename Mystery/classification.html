@@ -85,16 +85,22 @@
     <script>
         function result(){
 
+            load = "<p><img src='img/loading.gif' style='height: 50px;'> Loading..</p>"
             oui = "<p style='color: rgb(76, 197, 116)'><img src='img/green-thumb.png'> Your campaign should reach its goal !</p>" 
             non = "<p style='color: #da624a'><img src='img/red-thumb.png'> Your campaign should not reach its goal..</p>"
             budgetValue = parseInt(document.getElementById("budget").value)
 
-            if(budgetValue > 6000){
-                document.getElementById('result').innerHTML = oui
-            }
-            else {
-                document.getElementById('result').innerHTML = non
-            }
+            document.getElementById('result').innerHTML = load
+
+            setTimeout(() => {
+                if(budgetValue > 6000){
+                    document.getElementById('result').innerHTML = oui
+                }
+                else {
+                    document.getElementById('result').innerHTML = non
+                }
+            }, 1000);
+            
         }
 
     </script>
