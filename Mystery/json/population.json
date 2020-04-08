@@ -1,0 +1,386 @@
+[
+ {
+   "nom": "Ain",
+   "value": 0.000001
+ },
+ {
+   "nom": "Aisne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Allier",
+   "value": 0.000001
+ },
+ {
+   "nom": "Alpes-de-Haute-Provence",
+   "value": 0.000001
+ },
+ {
+   "nom": "Hautes-Alpes",
+   "value": 0.000001
+ },
+ {
+   "nom": "Alpes-Maritimes",
+   "value": 0.000001
+ },
+ {
+   "nom": "Ardèche",
+   "value": 0.000001
+ },
+ {
+   "nom": "Ardennes",
+   "value": 0.000001
+ },
+ {
+   "nom": "Ariège",
+   "value": 0.000001
+ },
+ {
+   "nom": "Aube",
+   "value": 0.000001
+ },
+ {
+   "nom": "Aude",
+   "value": 0.000001
+ },
+ {
+   "nom": "Aveyron",
+   "value": 0.000001
+ },
+ {
+   "nom": "Bouches-du-Rhône",
+   "value": 0.000001
+ },
+ {
+   "nom": "Calvados",
+   "value": 0.000001
+ },
+ {
+   "nom": "Cantal",
+   "value": 0.000001
+ },
+ {
+   "nom": "Charente",
+   "value": 0.000001
+ },
+ {
+   "nom": "Charente-Maritime",
+   "value": 0.000001
+ },
+ {
+   "nom": "Cher",
+   "value": 0.000001
+ },
+ {
+   "nom": "Corrèze",
+   "value": 0.000001
+ },
+ {
+   "nom": "Corse-du-Sud",
+   "value": 0.000001
+ },
+ {
+   "nom": "Haute-Corse",
+   "value": 0.000001
+ },
+ {
+   "nom": "Côte-d'Or",
+   "value": 0.000001
+ },
+ {
+   "nom": "Côtes-d'Armor",
+   "value": 0.000001
+ },
+ {
+   "nom": "Creuse",
+   "value": 0.000001
+ },
+ {
+   "nom": "Dordogne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Doubs",
+   "value": 0.000001
+ },
+ {
+   "nom": "Drôme",
+   "value": 0.000001
+ },
+ {
+   "nom": "Eure",
+   "value": 0.000001
+ },
+ {
+   "nom": "Eure-et-Loir",
+   "value": 0.000001
+ },
+ {
+   "nom": "Finistère",
+   "value": 0.000001
+ },
+ {
+   "nom": "Gard",
+   "value": 0.000001
+ },
+ {
+   "nom": "Haute-Garonne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Gers",
+   "value": 0.000001
+ },
+ {
+   "nom": "Gironde",
+   "value": 0.000001
+ },
+ {
+   "nom": "Hérault",
+   "value": 0.000001
+ },
+ {
+   "nom": "Ille-et-Vilaine",
+   "value": 0.000001
+ },
+ {
+   "nom": "Indre",
+   "value": 0.000001
+ },
+ {
+   "nom": "Indre-et-Loire",
+   "value": 0.000001
+ },
+ {
+   "nom": "Isère",
+   "value": 0.000001
+ },
+ {
+   "nom": "Jura",
+   "value": 0.000001
+ },
+ {
+   "nom": "Landes",
+   "value": 0.000001
+ },
+ {
+   "nom": "Loir-et-Cher",
+   "value": 0.000001
+ },
+ {
+   "nom": "Loire",
+   "value": 0.000001
+ },
+ {
+   "nom": "Haute-Loire",
+   "value": 0.000001
+ },
+ {
+   "nom": "Loire-Atlantique",
+   "value": 0.000001
+ },
+ {
+   "nom": "Loiret",
+   "value": 0.000001
+ },
+ {
+   "nom": "Lot",
+   "value": 0.000001
+ },
+ {
+   "nom": "Lot-et-Garonne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Lozère",
+   "value": 0.000001
+ },
+ {
+   "nom": "Maine-et-Loire",
+   "value": 0.000001
+ },
+ {
+   "nom": "Manche",
+   "value": 0.000001
+ },
+ {
+   "nom": "Marne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Haute-Marne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Mayenne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Meurthe-et-Moselle",
+   "value": 0.000001
+ },
+ {
+   "nom": "Meuse",
+   "value": 0.000001
+ },
+ {
+   "nom": "Morbihan",
+   "value": 0.000001
+ },
+ {
+   "nom": "Moselle",
+   "value": 0.000001
+ },
+ {
+   "nom": "Nièvre",
+   "value": 0.000001
+ },
+ {
+   "nom": "Nord",
+   "value": 0.000001
+ },
+ {
+   "nom": "Oise",
+   "value": 0.000001
+ },
+ {
+   "nom": "Orne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Pas-de-Calais",
+   "value": 0.000001
+ },
+ {
+   "nom": "Puy-de-Dôme",
+   "value": 0.000001
+ },
+ {
+   "nom": "Pyrénées-Atlantiques",
+   "value": 0.000001
+ },
+ {
+   "nom": "Hautes-Pyrénées",
+   "value": 0.000001
+ },
+ {
+   "nom": "Pyrénées-Orientales",
+   "value": 0.000001
+ },
+ {
+   "nom": "Bas-Rhin",
+   "value": 0.000001
+ },
+ {
+   "nom": "Haut-Rhin",
+   "value": 0.000001
+ },
+ {
+   "nom": "Rhône",
+   "value": 0.000001
+ },
+ {
+   "nom": "Haute-Saône",
+   "value": 0.000001
+ },
+ {
+   "nom": "Saône-et-Loire",
+   "value": 0.000001
+ },
+ {
+   "nom": "Sarthe",
+   "value": 0.000001
+ },
+ {
+   "nom": "Savoie",
+   "value": 0.000001
+ },
+ {
+   "nom": "Haute-Savoie",
+   "value": 0.000001
+ },
+ {
+   "nom": "Paris",
+   "value": 0.000001
+ },
+ {
+   "nom": "Seine-Maritime",
+   "value": 0.000001
+ },
+ {
+   "nom": "Seine-et-Marne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Yvelines",
+   "value": 0.000001
+ },
+ {
+   "nom": "Deux-Sèvres",
+   "value": 0.000001
+ },
+ {
+   "nom": "Somme",
+   "value": 0.000001
+ },
+ {
+   "nom": "Tarn",
+   "value": 0.000001
+ },
+ {
+   "nom": "Tarn-et-Garonne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Var",
+   "value": 0.000001
+ },
+ {
+   "nom": "Vaucluse",
+   "value": 0.000001
+ },
+ {
+   "nom": "Vendée",
+   "value": 0.000001
+ },
+ {
+   "nom": "Vienne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Haute-Vienne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Vosges",
+   "value": 0.000001
+ },
+ {
+   "nom": "Yonne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Territoire de Belfort",
+   "value": 0.000001
+ },
+ {
+   "nom": "Essonne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Hauts-de-Seine",
+   "value": 0.000001
+ },
+ {
+   "nom": "Seine-Saint-Denis",
+   "value": 0.000001
+ },
+ {
+   "nom": "Val-de-Marne",
+   "value": 0.000001
+ },
+ {
+   "nom": "Val-d'Oise",
+   "value": 0.000001
+ }
+]
