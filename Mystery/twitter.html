@@ -77,32 +77,40 @@
         
 
 		function gettwit(){
+                    load = "<p id='loading'><img src='img/loading.gif' style='height: 50px;'> Loading..</p>" 
 					searchValue = document.getElementById("search").value
 					searchValue = searchValue.toLowerCase()
-					code = "<ul>"
-					var requestURL = 'data/data_twitter.json';
-					var request = new XMLHttpRequest();
-					request.open('GET', requestURL);
-					request.responseType = 'json';
-					request.send();
-					request.onload = function result() {
-						var data = request.response;
-						console.log(data)
-						for(i=0; i<2; i++){
-							console.log(searchValue)
-							console.log(data[i]["name"])
-							if(data[i]["name"] == searchValue){
-								for(j=0; j<10; j++){
-									console.log(data[i]["hashtagsAssocies"][j])
-									code += "<li style='color: rgb(79, 148, 232, "+(1-(j/20))+")'>"+data[i]["hashtagsAssocies"][j]["name"]+"</li>"
-								}
-							}
-						}
-						code += "</ul>"
-						console.log(code)
-						document.getElementById('hashtags').innerHTML = code
-						}
 
+                    document.getElementById('hashtags').innerHTML = load
+
+                    if(searchValue.length == 0){
+                        document.getElementById('hashtags').innerHTML = ''
+                    }
+                    else {
+                        var requestURL = 'data/data_twitter.json';
+                        var request = new XMLHttpRequest();
+                        request.open('GET', requestURL);
+                        request.responseType = 'json';
+                        request.send();
+                        request.onload = function result() {
+                            var data = request.response;
+                            console.log(data)
+                            for(i=0; i<2; i++){
+                                console.log(searchValue)
+                                console.log(data[i]["name"])
+                                if(data[i]["name"] == searchValue){
+                                    code = "<ul>"
+                                    for(j=0; j<10; j++){
+                                        console.log(data[i]["hashtagsAssocies"][j])
+                                        code += "<li style='color: rgb(79, 148, 232, "+(1-(j/20))+")'>"+data[i]["hashtagsAssocies"][j]["name"]+"</li>"
+                                    }
+                                    code += "</ul>"
+                                    console.log(code)
+                                    document.getElementById('hashtags').innerHTML = code
+                                }
+                            }
+                        }
+                    }
 		}
     </script>
   </body>
