@@ -2,21 +2,27 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Geotarget</title>
+
+    <title>Geotarget - Goal</title>
     <link rel="icon" type="image/png" href="img/favicon.png" />
+
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="styleclassification.css">
+    <link rel="stylesheet" href="bubble.css">
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 
   </head>
   <body>
-    <div id="logo"  style="width: 200px">
+    <div id="logo"  style="width: 200px" onmouseover="displaybubble()">
         <a href="index.html">
             <img src="img/logo-white.png" style="width: 100%">
         </a>
     </div>
+
     <div id="title">
-        <img src="imggrandes/age-baby.png">
-        Classification
+        <img src="imggrandes/logo-goal.png">
+        Goal
     </div>
 
     <div id="formulaire">
@@ -51,13 +57,13 @@
                         </select>
                     </td>
                     <td>
-                        <input type="text" name="Budget" id="budget" placeholder="7000" required>
+                        <input type="text" name="Budget" id="budget" placeholder="15000" required>
                     </td>
                     <td>
-                        <input type="text" name="Volume" placeholder="35000" required>
+                        <input type="text" name="Volume" id="volume" placeholder="2000000" required>
                     </td>
                     <td>
-                        <input type="text" name="Price" placeholder="0.20" required>
+                        <input type="text" name="Price" id="price" placeholder="0.20" required>
                     </td>
                     <td>
                         <select name="Format">
@@ -78,30 +84,170 @@
         <div id="result">
             
         </div>
+        <figure id="figure" class="highcharts-figure">
+            <div id="containerscatter"></div>
+        </figure>
+    </div>
+
+    <div id="bubble" class="bubble hiddenbubble">
+        <ul>
+            <li>
+                <a href="map.html" style="display:block" >
+                <img src="imggrandes/logo-map.png"> Map
+                </a>
+            </li>
+            <li>
+                <a href="twitter.html" style="display:block" >
+                <img src="imggrandes/logo-twitter.png"> Twitter
+                </a>
+            </li>
+            <li>
+                <a href="goal.html" style="display:block" >
+                <img src="imggrandes/logo-goal.png"> Goal
+                </a>
+            </li>
+            <li>
+                <a href="trend.html" style="display:block" >
+                <img src="imggrandes/logo-trend.png"> Trend
+                </a>
+            </li>
+        </ul>
     </div>
 
 
-
     <script>
+
+        document.getElementById('figure').className = 'highcharts-figure hidden'
+
+
+        function getchart(xvalue, yvalue){
+            var requestURL = 'data/data_for_scatterplot.json';
+            var request = new XMLHttpRequest();
+            request.open('GET', requestURL);
+            request.responseType = 'json';
+            request.send();
+            request.onload = function() {
+                var data = request.response;
+                var dataachieved = [];
+                var datanotachieved = [];
+                for(i = 0; i <= 63; i++){
+                    if(data['achievement'][i] == 1){
+                        dataachieved.push([data['Goal budget'][i], data['Volume booked'][i]])
+                    }
+                    else {
+                        datanotachieved.push([data['Goal budget'][i], data['Volume booked'][i]])
+                    }
+                }
+
+
+                Highcharts.chart('containerscatter', {
+                    chart: {
+                        type: 'scatter',
+                        zoomType: 'xy',
+                        backgroundColor: 'none'
+                    },
+                    title: {
+                        text: 'Goal achievement'
+                    },
+                    xAxis: {
+                        title: {
+                            enabled: true,
+                            text: 'Goal Budget'
+                        },
+                        startOnTick: true,
+                        endOnTick: true,
+                        showLastLabel: true
+                    },
+                    yAxis: {
+                        title: {
+                            text: 'Volume Booked'
+                        },
+                        max: 5000000
+                    },
+                    legend: {
+                        layout: 'vertical',
+                        align: 'left',
+                        verticalAlign: 'top',
+                        x: 100,
+                        y: 70,
+                        floating: true,
+                        backgroundColor: Highcharts.defaultOptions.chart.backgroundColor,
+                        borderWidth: 1
+                    },
+                    plotOptions: {
+                        scatter: {
+                            marker: {
+                                radius: 5,
+                                states: {
+                                    hover: {
+                                        enabled: true,
+                                        lineColor: 'rgb(100,100,100)'
+                                    }
+                                }
+                            },
+                            states: {
+                                hover: {
+                                    marker: {
+                                        enabled: false
+                                    }
+                                }
+                            },
+                            tooltip: {
+                                headerFormat: '<b>{series.name}</b><br>',
+                                pointFormat: 'Goal budget : {point.x}, Volume booked : {point.y}'
+                            }
+                        }
+                    },
+                    series: [{
+                        name: 'Goal archieved',
+                        color: 'rgba(83, 223, 85, .5)',
+                        data: dataachieved
+                    },{
+                        name: 'Goal not archieved',
+                        color: 'rgba(223, 83, 83, .5)',
+                        data: datanotachieved,
+                    },{
+                        name: 'Your simulation',
+                        color: '#184a5d',
+                        data: [[xvalue, yvalue]]
+                    }]
+                });
+            }
+        }
+
         function result(){
 
             load = "<p><img src='img/loading.gif' style='height: 50px;'> Loading..</p>"
             oui = "<p style='color: rgb(76, 197, 116)'><img src='img/green-thumb.png'> Your campaign should reach its goal !</p>" 
-            non = "<p style='color: #da624a'><img src='img/red-thumb.png'> Your campaign should not reach its goal..</p>"
-            budgetValue = parseInt(document.getElementById("budget").value)
-
-            document.getElementById('result').innerHTML = load
-
-            setTimeout(() => {
-                if(budgetValue > 6000){
-                    document.getElementById('result').innerHTML = oui
-                }
-                else {
-                    document.getElementById('result').innerHTML = non
-                }
-            }, 1000);
+            non = "<p style='color: #da624a; margin-bottom: 50px'><img src='img/red-thumb.png'> Your campaign should not reach its goal..</p>"
             
+            budgetValue = parseInt(document.getElementById("budget").value)
+            volumeValue = parseInt(document.getElementById("volume").value)
+            priceValue = parseInt(document.getElementById("price").value)
+
+            if(budgetValue > 0 && volumeValue > 0 && priceValue > 0){
+                document.getElementById('result').innerHTML = load
+
+                setTimeout(() => {
+                    if(budgetValue > 15000){
+                        document.getElementById('result').innerHTML = oui
+                    }
+                    else {
+                        document.getElementById('figure').className = 'highcharts-figure'
+                        getchart(budgetValue, volumeValue)
+                        document.getElementById('result').innerHTML = non
+                    }
+                }, 1000);
+            }            
         }
+
+        function displaybubble(){
+            document.getElementById('bubble').className = "bubble";
+            setTimeout(() => {
+                document.getElementById('bubble').className = "bubble hiddenbubble"
+                },3000);
+        }
+        
 
     </script>
   </body>
