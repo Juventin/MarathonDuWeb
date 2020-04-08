@@ -180,6 +180,7 @@ input[type="checkbox"]:checked {
     display: inline-block;
     width: 45px;
     margin: 0 10px 0 10px;
+    cursor: pointer;
 }
 
 .sliderwidget *, .slidertext * {
