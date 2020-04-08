@@ -30,9 +30,6 @@
             <table>
                 <tr>
                     <td>
-                        Price model :
-                    </td>
-                    <td>
                         Goal budget :
                     </td>
                     <td>
@@ -42,20 +39,13 @@
                         Price :
                     </td>
                     <td>
-                        Format :
+                        Campaign duration (days) :
                     </td>
                     <td>
 
                     </td>
                 </tr>
                 <tr>
-                    <td>
-                        <select name="Model">
-                            <option value="CPC">CPC</option>
-                            <option value="CPM">CPM</option>
-                            <option value="CPV">CPV</option>
-                        </select>
-                    </td>
                     <td>
                         <input type="text" name="Budget" id="budget" placeholder="15000" required>
                     </td>
@@ -66,13 +56,7 @@
                         <input type="text" name="Price" id="price" placeholder="0.20" required>
                     </td>
                     <td>
-                        <select name="Format">
-                            <option value="All">All</option>
-                            <option value="Dislay">Dislay</option>
-                            <option value="Mix">Mix</option>
-                            <option value="Natif">Natif</option>
-                            <option value="Video">Video</option>
-                        </select>
+                        <input type="text" name="duration" id="duration" placeholder="45" required>
                     </td>
                     <td>
                         <input type="submit" value="Predict" onclick="result()">
@@ -134,10 +118,10 @@
                 var datanotachieved = [];
                 for(i = 0; i <= 63; i++){
                     if(data['achievement'][i] == 1){
-                        dataachieved.push([data['Goal budget'][i], data['Volume booked'][i]])
+                        dataachieved.push([data['Goal budget'][i], data['campaign_duration'][i]])
                     }
                     else {
-                        datanotachieved.push([data['Goal budget'][i], data['Volume booked'][i]])
+                        datanotachieved.push([data['Goal budget'][i], data['campaign_duration'][i]])
                     }
                 }
 
@@ -162,9 +146,8 @@
                     },
                     yAxis: {
                         title: {
-                            text: 'Volume Booked'
-                        },
-                        max: 5000000
+                            text: 'Campaign Duration'
+                        }
                     },
                     legend: {
                         layout: 'vertical',
@@ -196,7 +179,7 @@
                             },
                             tooltip: {
                                 headerFormat: '<b>{series.name}</b><br>',
-                                pointFormat: 'Goal budget : {point.x}, Volume booked : {point.y}'
+                                pointFormat: 'Goal budget : {point.x}, Campaign duration : {point.y}'
                             }
                         }
                     },
@@ -226,19 +209,20 @@
             budgetValue = parseInt(document.getElementById("budget").value)
             volumeValue = parseInt(document.getElementById("volume").value)
             priceValue = parseFloat(document.getElementById("price").value)
+            durationValue = parseFloat(document.getElementById("duration").value)
 
-            if(budgetValue > 0 && volumeValue > 0 && priceValue > 0){
+            if(budgetValue > 0 && volumeValue > 0 && priceValue > 0 && durationValue > 0){
                 document.getElementById('result').innerHTML = load
 
                 setTimeout(() => {
                     if(budgetValue > 15000){
                         document.getElementById('figure').className = 'highcharts-figure'
-                        getchart(budgetValue, volumeValue)
+                        getchart(budgetValue, durationValue)
                         document.getElementById('result').innerHTML = oui
                     }
                     else {
                         document.getElementById('figure').className = 'highcharts-figure'
-                        getchart(budgetValue, volumeValue)
+                        getchart(budgetValue, durationValue)
                         document.getElementById('result').innerHTML = non
                     }
                 }, 1000);
