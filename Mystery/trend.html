@@ -61,7 +61,12 @@
             </table>
         </form>
 
-        <div id="result" class="trend">
+        <div id="loading" class="hidden">
+            <p><img src='img/loading.gif' style='height: 50px;'> Loading..</p>
+        </div>
+
+
+        <div id="result" class="trend hidden">
             <table>
                 <tr>
                     <td>
@@ -90,7 +95,7 @@
                 <div id="predbody" class="collapse hidden">
                     <p>Our prediction captures the trend and seasonality of any given data in order to forecast it.
                     <ul>
-                        <li><strong>The black dots</strong> are the data you gave us that allowed us to do the prediction.</li>
+                        <li><strong>The black dots</strong> is the data you gave us that allowed us to do the prediction.</li>
                         <li><strong>The blue curve</strong> is the curve fitted to the data that continue until the end of the campaign to show you the future trend.</li>
                         <li><strong>The red curve</strong> is the same as the ancient, but without the seasonality of the time series.</li>
                         <li><strong>The red dotted line(s)</strong> represents the moment(s) where the trend of the time series change.</li>
@@ -172,8 +177,27 @@
         });
 
         function result(){
-        
+
+            durationValue = parseInt(document.getElementById("duration").value)
+            goalValue = parseInt(document.getElementById("goal").value)
+
+            if(durationValue > 0 && goalValue > 0){
+                document.getElementById('loading').className = ""
+
+                durationValue = parseInt(document.getElementById("duration").value)
+                goalValue = parseInt(document.getElementById("goal").value)
+
+                if(durationValue > 0 && goalValue > 0){}
+                setTimeout(() => {
+                        document.getElementById('loading').className = "hidden"
+                        document.getElementById('result').className = "trend"
+                    }, 1000);
+            }
+            
         }
+
+
+
 
         function displaybubble(){
             document.getElementById('bubble').className = "bubble";
@@ -181,6 +205,9 @@
                 document.getElementById('bubble').className = "bubble hiddenbubble"
                 },3000);
         }
+        
+
+
 
         function toggle(id){
             idbody = id+'body'

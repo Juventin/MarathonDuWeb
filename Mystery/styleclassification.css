@@ -86,7 +86,7 @@ input[type="submit"] {
 
 #result {
     width: 100%;
-    margin: 70px auto 0 auto;
+    margin: 0px auto 0 auto;
     text-align: center;
     font-size: 25px;
 }
@@ -154,4 +154,17 @@ input[type="submit"] {
 
 .explications ul {
     list-style-type: disc;
+}
+
+#loading {
+    width: 200px;
+    margin: 70px auto 0 auto;
+}
+
+#loading img {
+    height: 50px;
+    vertical-align: -17px;
+}
+#loading p {
+    font-size: 20px;
 }
