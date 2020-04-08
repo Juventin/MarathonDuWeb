@@ -1,0 +1,33 @@
+body {
+    background-color: #184a5d;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+    color: #d2d9e6;
+}
+
+a {
+    color: #d2d9e6;
+    text-decoration: none;
+}
+
+
+#bloc {
+    text-align: center;
+}
+
+#groslogo {
+    width: 300px;
+    margin-top: 15%;
+}
+
+table {
+    width: 400px;
+    margin: 30px auto 0 auto;
+}
+
+table tr td {
+    width: 100px;
+}
+
+table tr td img {
+    width: 65px;
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Geotarget</title>
+    <link rel="icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleclassification.css">
+
+  </head>
+  <body>
+    <div id="logo"  style="width: 200px">
+        <a href="index.html">
+            <img src="img/logo-white.png" style="width: 100%">
+        </a>
+    </div>
+    <div id="title">
+        <img src="imggrandes/age-baby.png">
+        Classification
+    </div>
+
+    <div id="formulaire">
+        <form onsubmit="return false;">
+            <table>
+                <tr>
+                    <td>
+                        Price model :
+                    </td>
+                    <td>
+                        Goal budget :
+                    </td>
+                    <td>
+                        Volume booked :
+                    </td>
+                    <td>
+                        Price :
+                    </td>
+                    <td>
+                        Format :
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <select name="Model">
+                            <option value="CPC">CPC</option>
+                            <option value="CPM">CPM</option>
+                            <option value="CPV">CPV</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" name="Budget" id="budget" placeholder="7000" required>
+                    </td>
+                    <td>
+                        <input type="text" name="Volume" placeholder="35000" required>
+                    </td>
+                    <td>
+                        <input type="text" name="Price" placeholder="0.20" required>
+                    </td>
+                    <td>
+                        <select name="Format">
+                            <option value="All">All</option>
+                            <option value="Dislay">Dislay</option>
+                            <option value="Mix">Mix</option>
+                            <option value="Natif">Natif</option>
+                            <option value="Video">Video</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="submit" value="Predict" onclick="result()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <div id="result">
+            
+        </div>
+    </div>
+
+
+
+    <script>
+        function result(){
+
+            oui = "<p style='color: rgb(76, 197, 116)'><img src='img/green-thumb.png'> Your campaign should reach its goal !</p>" 
+            non = "<p style='color: #da624a'><img src='img/red-thumb.png'> Your campaign should not reach its goal..</p>"
+            budgetValue = parseInt(document.getElementById("budget").value)
+
+            if(budgetValue > 6000){
+                document.getElementById('result').innerHTML = oui
+            }
+            else {
+                document.getElementById('result').innerHTML = non
+            }
+        }
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+body {
+    background-color: #FCFCFC;
+}
+
+#title {
+    width: 500px;
+    margin: 40px auto 70px auto;
+    font-size: 30px;
+    text-align: center;
+    color: #184a5d;
+    font-weight: bold;
+}
+
+#title img {
+    height: 35px;
+    vertical-align: -7px;
+}
+
+#formulaire {
+    width: 90%;
+    margin: 0 auto 0 auto;
+}
+
+table {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    color: rgb(88, 88, 88);
+}
+
+table tr td {
+    width: 16%;
+}
+
+
+input, select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+}
+
+input, select {
+    border-radius: 4px;
+    background: white;
+    border: 3px solid rgb(196, 196, 196);
+    box-sizing: border-box;
+    margin-top: 5px;
+    font-size: 20px;
+    border-radius: 6px;
+    padding: 6px 9px 6px 9px;
+    width: 70%;
+}
+
+input:focus, select:focus {
+    border: 3px solid #308bae;
+}
+
+select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+    background-repeat: no-repeat;
+    background-position-x: 90%;
+    background-position-y: 5px;
+}
+
+input[type="submit"] {
+    background-color: #308bae;
+    border: 2px solid #184a5d;
+    color: white;
+}
+
+#result {
+    width: 50%;
+    margin: 70px auto 0 auto;
+    text-align: center;
+    font-size: 25px;
+}
+
+#result img {
+    vertical-align: -22px;
+    margin-right: 10px;
+}
