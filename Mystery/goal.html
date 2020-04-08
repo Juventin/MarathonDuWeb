@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 
-    <title>Geotarget - Goal</title>
+    <title>AdOps Helper - Goal</title>
     <link rel="icon" type="image/png" href="img/favicon.png" />
 
     <link rel="stylesheet" href="style.css">
@@ -14,14 +14,14 @@
 
   </head>
   <body>
-    <div id="logo"  style="width: 200px" onmouseover="displaybubble()">
+    <div id="logo" onmouseover="displaybubble()" style="border-right: 1px solid #318bae; border-bottom: 1px solid #318bae">
         <a href="index.html">
             <img src="img/logo-white.png" style="width: 100%">
         </a>
     </div>
 
     <div id="title">
-        <img src="imggrandes/logo-goal.png">
+        <img src="imggrandes/logo-goal.png"><br />
         Goal
     </div>
 
@@ -220,7 +220,7 @@
         function result(){
 
             load = "<p><img src='img/loading.gif' style='height: 50px;'> Loading..</p>"
-            oui = "<p style='color: rgb(76, 197, 116)'><img src='img/green-thumb.png'> Your campaign should reach its goal !</p>" 
+            oui = "<p style='color: rgb(76, 197, 116); margin-bottom: 40px'><img src='img/green-thumb.png'> Your campaign should reach its goal !</p>" 
             non = "<p style='color: #da624a; margin-bottom: 40px'><img src='img/red-thumb.png'> Your campaign might not reach its goal..</p><p style='font-size: 13px; color: grey; margin-bottom: 20px'>If you want your campaign to reach its goal, you should low the volume booked or up the goal budget to fit in the zone with the achieved goals :</p>"
             
             budgetValue = parseInt(document.getElementById("budget").value)
@@ -232,6 +232,8 @@
 
                 setTimeout(() => {
                     if(budgetValue > 15000){
+                        document.getElementById('figure').className = 'highcharts-figure'
+                        getchart(budgetValue, volumeValue)
                         document.getElementById('result').innerHTML = oui
                     }
                     else {

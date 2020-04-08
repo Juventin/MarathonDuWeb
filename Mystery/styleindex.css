@@ -30,4 +30,13 @@ table tr td {
 
 table tr td img {
     width: 65px;
+    margin-top: 5px;
+    margin-bottom: 0;
+    transition-property: margin;
+    transition-duration: 0.3s
+}
+
+table tr td img:hover {
+    margin-bottom: 5px;
+    margin-top: 0px;
 }

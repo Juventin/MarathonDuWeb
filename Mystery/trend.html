@@ -2,14 +2,200 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Geotarget</title>
+
+    <title>AdOps Helper - Trend</title>
     <link rel="icon" type="image/png" href="img/favicon.png" />
+
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styleclassification.css">
+    <link rel="stylesheet" href="bubble.css">
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
 
   </head>
   <body>
+    <div id="logo" onmouseover="displaybubble()" style="border-right: 1px solid #DCE0E1; border-bottom: 1px solid #eeeeee">
+        <a href="index.html">
+            <img src="img/logo-white.png" style="width: 100%">
+        </a>
+    </div>
+
+    <div id="title">
+        <img src="imggrandes/logo-trend.png"><br />
+        Trend
+    </div>
+
+    <div id="formulaire">
+        <p class="instructions">Please upload a one-column csv file containing the impressions of the campaign each day in an ascending chronological order.</p>
+        <form onsubmit="return false;">
+            <table>
+                <tr>
+                    <td>
+                        File :
+                    </td>
+                    <td>
+                        Campaign duration (days) :
+                    </td>
+                    <td>
+                        Impressions goal :
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="file" name="file" id="file" class="inputfile" data-multiple-caption="{count} files selected" multiple/>
+                        <label for="file">Choose a file</label>
+                    </td>
+                    <td>
+                        <input type="text" name="duration" id="duration" placeholder="45" required>
+                    </td>
+                    <td>
+                        <input type="text" name="goal" id="goal" placeholder="2000000" required>
+                    </td>
+                    <td>
+                        <input type="submit" value="Predict" onclick="result()">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <div id="result" class="trend">
+            <table>
+                <tr>
+                    <td>
+                        <img src="img/temoin.png">
+                    </td>
+                    <td>
+                        <img src="img/resultattrend1.png">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        General trend
+                    </td>
+                    <td>
+                        Our prediction
+                    </td>
+                </tr>
+            </table>
+            <div class="explications">
+                <h3 onclick="toggle('trend')">What is the trend ? <img src="img/down-arrow.png" id="trendico" class="arrow down"></h3>
+                <div id="trendbody" class="collapse hidden">
+                    <p>The trend is the relation between the amount of time that already passed and the percentage of achievement yet to accomplish. In this example, the achievement is the number of Impressions that you indicated right above.</p>
+                    <p>If we are perfect every day, the trend should value 1 for each day. However, this is never the case. This value could be lower for some days, but the most important thing is that at the end of the campaign, for the last day, it should be equal or greater (in the best cases) to one.</p>
+                </div>
+                <h3 onclick="toggle('pred')">What does the prediction mean ? <img src="img/down-arrow.png" id="predico" class="arrow down"></h3>
+                <div id="predbody" class="collapse hidden">
+                    <p>Our prediction captures the trend and seasonality of any given data in order to forecast it.
+                    <ul>
+                        <li><strong>The black dots</strong> are the data you gave us that allowed us to do the prediction.</li>
+                        <li><strong>The blue curve</strong> is the curve fitted to the data that continue until the end of the campaign to show you the future trend.</li>
+                        <li><strong>The red curve</strong> is the same as the ancient, but without the seasonality of the time series.</li>
+                        <li><strong>The red dotted line(s)</strong> represents the moment(s) where the trend of the time series change.</li>
+                        <li><strong>The blue area</strong> represents the interval of confidence of the model. </li>
+                    </ul>
+                    </p>
+                    <p style="margin-top: 18px; margin-bottom: 20px">
+                        So, your objective is that the blue line is equal or greater to one at the end of the plot. 
+                        If it’s the case, your campaign is doing great, keep going! 
+                    </p>
+                    <p>
+                        If it’s not the case, it may be caused by those several issues:
+                        <ul>
+                            <ol><strong>1.</strong>  The amount of time that already passed is not enough high and the model couldn’t learn correctly.</ol>
+                            <ol><strong>2.</strong>  The data is not complex enough and the model only follow the current trend.</ol>
+                            <ol><strong>3.</strong>  Your campaign will not reach its objective.</ol>
+                        </ul>
+                    </p>
+                    <p>
+                        Note that if you achieved 75-80% of your campaign and the final is far under 1, the issue is probably the third one, and you should consider stop your campaign. 
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <div id="bubble" class="bubble hiddenbubble">
+        <ul>
+            <li>
+                <a href="map.html" style="display:block" >
+                <img src="imggrandes/logo-map.png"> Map
+                </a>
+            </li>
+            <li>
+                <a href="twitter.html" style="display:block" >
+                <img src="imggrandes/logo-twitter.png"> Twitter
+                </a>
+            </li>
+            <li>
+                <a href="goal.html" style="display:block" >
+                <img src="imggrandes/logo-goal.png"> Goal
+                </a>
+            </li>
+            <li>
+                <a href="trend.html" style="display:block" >
+                <img src="imggrandes/logo-trend.png"> Trend
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+
 
     <script>
+
+        var inputs = document.querySelectorAll( '.inputfile' );
+        Array.prototype.forEach.call( inputs, function( input )
+        {
+            var label	 = input.nextElementSibling,
+                labelVal = label.innerHTML;
+
+            input.addEventListener( 'change', function(e){
+                var fileName = '';
+                if(this.files && this.files.length > 1){
+                    fileName = (this.getAttribute( 'data-multiple-caption' ) || '').replace('{count}', this.files.length );
+                }
+                else {
+                    fileName = e.target.value.split( "\\" ).pop()
+                }
+                if( fileName ){
+                    label.innerHTML = fileName;
+                }
+                else {
+                    label.innerHTML = labelVal;
+                }
+            });
+        });
+
+        function result(){
+        
+        }
+
+        function displaybubble(){
+            document.getElementById('bubble').className = "bubble";
+            setTimeout(() => {
+                document.getElementById('bubble').className = "bubble hiddenbubble"
+                },3000);
+        }
+
+        function toggle(id){
+            idbody = id+'body'
+            idico = id+'ico'
+
+            if(document.getElementById(idbody).className == "collapse hidden"){
+                document.getElementById(idbody).className = "collapse"
+                document.getElementById(idico).className = "arrow up"
+            }
+            else {
+                document.getElementById(idbody).className = "collapse hidden"
+                document.getElementById(idico).className = "arrow down"
+            }
+        }
+        
 
     </script>
   </body>

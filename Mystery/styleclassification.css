@@ -2,23 +2,40 @@ body {
     background-color: #FCFCFC;
 }
 
+#logo {
+    width: 200px;
+    position: absolute;
+}
+
 #title {
-    width: 500px;
-    margin: 40px auto 70px auto;
+    width: 100%;
+    padding: 20px 0 20px 0;
     font-size: 30px;
     text-align: center;
-    color: #184a5d;
+    background-color: #184a5d;
+    color: white;
     font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 0px 4px rgb(92, 92, 92);
 }
 
 #title img {
-    height: 35px;
+    height: 60px;
     vertical-align: -7px;
+    margin-bottom: 20px
 }
 
 #formulaire {
     width: 90%;
     margin: 0 auto 0 auto;
+}
+
+#formulaire .instructions {
+    color: grey;
+    font-style: italic;
+    margin-bottom: 30px;
 }
 
 table {
@@ -38,7 +55,7 @@ input, select {
     -ms-appearance: none;
 }
 
-input, select {
+input, select, .inputfile + label {
     border-radius: 4px;
     background: white;
     border: 3px solid rgb(196, 196, 196);
@@ -50,7 +67,7 @@ input, select {
     width: 70%;
 }
 
-input:focus, select:focus {
+input:focus, select:focus, .inputfile:focus + label, .inputfile + label:hover {
     border: 3px solid #308bae;
 }
 
@@ -68,7 +85,7 @@ input[type="submit"] {
 }
 
 #result {
-    width: 70%;
+    width: 100%;
     margin: 70px auto 0 auto;
     text-align: center;
     font-size: 25px;
@@ -77,4 +94,64 @@ input[type="submit"] {
 #result img {
     vertical-align: -22px;
     margin-right: 10px;
+}
+
+
+.inputfile {
+	width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+}
+
+.inputfile + label {
+    cursor: pointer;
+}
+
+.trend img {
+    height: 250px;
+}
+
+.trend table {
+    margin-bottom: 50px;
+}
+
+.explications {
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.explications h3 {
+    color: #416979;
+    font-size: 20px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    border-left: 1px solid #308bae;
+    border-radius: 4px;
+    padding: 10px;
+    background-color: rgb(247, 247, 247);
+    cursor: pointer;
+}
+
+.explications h3 img {
+    height: 20px;
+    float: right;
+    transition: transform 0.3s
+}
+
+.explications p, .explications li, .explications ol {
+    font-size: 14px;
+    color: #5a5a5a;
+    margin-bottom: 8px;
+    text-indent: 30px;
+}
+
+.explications ul {
+    list-style-type: disc;
 }
