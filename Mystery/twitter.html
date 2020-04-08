@@ -78,6 +78,7 @@
 
 		function gettwit(){
 					searchValue = document.getElementById("search").value
+					searchValue = searchValue.toLowerCase()
 					code = "<ul>"
 					var requestURL = 'data/data_twitter.json';
 					var request = new XMLHttpRequest();
@@ -93,11 +94,12 @@
 							if(data[i]["name"] == searchValue){
 								for(j=0; j<10; j++){
 									console.log(data[i]["hashtagsAssocies"][j])
-									code += "<li>"+data[i]["hashtagsAssocies"][j]["name"]+"</li>"
+									code += "<li style='color: rgb(79, 148, 232, "+(1-(j/20))+")'>"+data[i]["hashtagsAssocies"][j]["name"]+"</li>"
 								}
 							}
 						}
 						code += "</ul>"
+						console.log(code)
 						document.getElementById('hashtags').innerHTML = code
 						}
 

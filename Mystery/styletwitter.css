@@ -31,12 +31,13 @@
 
 
 #hashtags {
-	border-left: 3px solid #4F94E8; 
+	border-left: 4px solid #4F94E8; 
 	line-height: 40px;
-	color: #4F94E8;
+	color: rgb(79, 148, 232);
 	padding-left: 20px;
 	font-size: 25px;
 	margin-top: 20px;
+	font-weight: bold;
 	margin-bottom: 50px;
 }
 
