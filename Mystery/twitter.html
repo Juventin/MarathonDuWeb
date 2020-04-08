@@ -2,15 +2,106 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Geotarget</title>
-    <link rel="icon" type="image/png" href="img/geotarget.png" />
+    <title>AdOps Helper - Twitter</title>
+	<link rel="icon" type="image/png" href="img/favicon.png" />
+    
     <link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="styletwitter.css">
+    <link rel="stylesheet" href="bubble.css">
+	
+
 
   </head>
   <body>
 
-    <script>
+    <!-- SIDENAV  -->
+    <div id="logo" onmouseover="displaybubble()" style="border-right: 1px solid #F6D5D4; border-bottom: 1px solid #F6D5D4;">
+        <a href="index.html">
+            <img src="img/logo-white.png" style="width: 100%">
+        </a>
+    </div>
+	
+	
+    <div id="title">
+        <img src="imggrandes/logo-twitter.png"><br />
+        Twitter
+    </div>
 
+
+
+	<!-- TOP HASHTAG -->
+	<div class="centre">
+		<input type="text" id= "search" placeholder="Search..."  onkeyup="gettwit()" >
+		<p id="top">Top Hashtags</p>
+		<div id="hashtags">
+		</div>
+	</div>
+
+	
+    <div id="bubble" class="bubble hiddenbubble">
+        <ul>
+            <li>
+                <a href="map.html" style="display:block" >
+                <img src="imggrandes/logo-map.png"> Map
+                </a>
+            </li>
+            <li>
+                <a href="twitter.html" style="display:block" >
+                <img src="imggrandes/logo-twitter.png"> Twitter
+                </a>
+            </li>
+            <li>
+                <a href="goal.html" style="display:block" >
+                <img src="imggrandes/logo-goal.png"> Goal
+                </a>
+            </li>
+            <li>
+                <a href="trend.html" style="display:block" >
+                <img src="imggrandes/logo-trend.png"> Trend
+                </a>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+    <script>
+		
+        function displaybubble(){
+            document.getElementById('bubble').className = "bubble";
+            setTimeout(() => {
+                document.getElementById('bubble').className = "bubble hiddenbubble"
+                },15000);
+        }
+        
+
+		function gettwit(){
+					searchValue = document.getElementById("search").value
+					code = "<ul>"
+					var requestURL = 'data/data_twitter.json';
+					var request = new XMLHttpRequest();
+					request.open('GET', requestURL);
+					request.responseType = 'json';
+					request.send();
+					request.onload = function result() {
+						var data = request.response;
+						console.log(data)
+						for(i=0; i<2; i++){
+							console.log(searchValue)
+							console.log(data[i]["name"])
+							if(data[i]["name"] == searchValue){
+								for(j=0; j<10; j++){
+									console.log(data[i]["hashtagsAssocies"][j])
+									code += "<li>"+data[i]["hashtagsAssocies"][j]["name"]+"</li>"
+								}
+							}
+						}
+						code += "</ul>"
+						document.getElementById('hashtags').innerHTML = code
+						}
+
+		}
     </script>
   </body>
 </html>
