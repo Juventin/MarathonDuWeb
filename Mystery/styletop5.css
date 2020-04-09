@@ -1,0 +1,30 @@
+#top5 {
+    width: 230px;
+    border: 1px solid rgb(180, 180, 180);
+    padding: 6px;
+    border-radius: 3px;
+    color: rgb(58, 58, 58);
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.5);
+    left: 280px;
+    top: 20px;
+}
+
+#top5 .top5titre {
+    padding-bottom: 7px;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 7px;
+    color: black;
+    border-bottom: 1px solid #eeeeee;
+}
+
+#listeol {
+    margin-left: 10px;
+    list-style-type: none;
+    margin-bottom: 7px;
+}
