@@ -23,7 +23,7 @@ Le repository MarathonDuWeb contient deux dossiers principaux :
 
 ### Master CNO
 * Alix Muller
-* Charlotte Leone Augé
+* Charlotte Leone
 * Valentin Demeyer
 
 ## Liens pratiques :
