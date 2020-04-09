@@ -30,4 +30,4 @@ Le repository MarathonDuWeb contient deux dossiers principaux :
 
 [Lien vers l'application web](https://juventin.github.io/MarathonDuWeb/Mystery/index.html)
 
-![Image](Mystery/imggrandes/logo-black.png)
+[![Image](Mystery/imggrandes/logo-black.png)](https://juventin.github.io/MarathonDuWeb/Mystery/index.html)
